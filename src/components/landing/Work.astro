@@ -1,62 +1,63 @@
-<section class="scroll-mt-24" id="work">
+<section class="scroll-mt-28" id="work">
 
-  <div class="px-8 md:px-12 py-24 max-w-2xl mx-auto">
-    <h2 class="text-xl tracking-tighter font-light text-black">
+  <div class="px-8 md:px-12 pb-24 max-w-2xl mx-auto">
+    <h2 class="text-2xl tracking-tighter mb-8 font-light lg:text-4xl text-black">
       Some of Minimal work.
     </h2>
+    
 
     <div
       class="flex flex-col w-full"
       x-data="{
-      skip: 1,
-      atBeginning: false,
-      atEnd: false,
-      next() {
-          this.to((current, offset) => current + (offset * this.skip))
-      },
-      prev() {
-          this.to((current, offset) => current - (offset * this.skip))
-      },
-      to(strategy) {
-          let slider = this.$refs.slider
-          let current = slider.scrollLeft
-          let offset = slider.firstElementChild.getBoundingClientRect().width
-          slider.scrollTo({ left: strategy(current, offset), behavior: 'smooth' })
-      },
-      focusableWhenVisible: {
-          'x-intersect:enter'() {
-              this.$el.removeAttribute('tabindex')
-          },
-          'x-intersect:leave'() {
-              this.$el.setAttribute('tabindex', '-1')
-          },
-      },
-      disableNextAndPreviousButtons: {
-          'x-intersect:enter.threshold.05'() {
-              let slideEls = this.$el.parentElement.children
-              // If this is the first slide.
-              if (slideEls[0] === this.$el) {
-                  this.atBeginning = true
-              // If this is the last slide.
-              } else if (slideEls[slideEls.length-1] === this.$el) {
-                  this.atEnd = true
-              }
-          },
-          'x-intersect:leave.threshold.05'() {
-              let slideEls = this.$el.parentElement.children
-              // If this is the first slide.
-              if (slideEls[0] === this.$el) {
-                  this.atBeginning = false
-              // If this is the last slide.
-              } else if (slideEls[slideEls.length-1] === this.$el) {
-                  this.atEnd = false
-              }
-          },
-      },
-  }"
+        skip: 1,
+        atBeginning: false,
+        atEnd: false,
+        next() {
+            this.to((current, offset) => current + (offset * this.skip))
+        },
+        prev() {
+            this.to((current, offset) => current - (offset * this.skip))
+        },
+        to(strategy) {
+            let slider = this.$refs.slider
+            let current = slider.scrollLeft
+            let offset = slider.firstElementChild.getBoundingClientRect().width
+            slider.scrollTo({ left: strategy(current, offset), behavior: 'smooth' })
+        },
+        focusableWhenVisible: {
+            'x-intersect:enter'() {
+                this.$el.removeAttribute('tabindex')
+            },
+            'x-intersect:leave'() {
+                this.$el.setAttribute('tabindex', '-1')
+            },
+        },
+        disableNextAndPreviousButtons: {
+            'x-intersect:enter.threshold.05'() {
+                let slideEls = this.$el.parentElement.children
+                // If this is the first slide.
+                if (slideEls[0] === this.$el) {
+                    this.atBeginning = true
+                // If this is the last slide.
+                } else if (slideEls[slideEls.length-1] === this.$el) {
+                    this.atEnd = true
+                }
+            },
+            'x-intersect:leave.threshold.05'() {
+                let slideEls = this.$el.parentElement.children
+                // If this is the first slide.
+                if (slideEls[0] === this.$el) {
+                    this.atBeginning = false
+                // If this is the last slide.
+                } else if (slideEls[slideEls.length-1] === this.$el) {
+                    this.atEnd = false
+                }
+            },
+        },
+    }"
     >
       <div
-        class="flex flex-col w-full bg-white rounded-3xl pt-4  mt-4"
+        class="flex flex-col w-full bg-white rounded-3xl pt-4"
         aria-labelledby="carousel-label"
         role="region"
         tabindex="0"
