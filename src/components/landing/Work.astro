@@ -1,10 +1,35 @@
+---
+interface Work {
+  alt: string
+  src: string
+}
+
+const works: Array<Work> = [
+  {
+    alt: 'Idxboost CMS',
+    src: '/works/idxboost-cms.webp',
+  },
+  {
+    alt: 'Guarnic Overview',
+    src: '/works/guarnic-overview-mockup.webp',
+  },
+  {
+    alt: 'Taskfive App',
+    src: '/works/taskfive-app.webp',
+  },
+  {
+    alt: 'Traveling Dashboard',
+    src: '/works/dashboard-traveling-peru.webp',
+  }
+]
+---
+
 <section class="scroll-mt-28" id="work">
 
   <div class="px-8 md:px-12 pb-24 max-w-2xl mx-auto">
-    <h2 class="text-2xl tracking-tighter mb-8 font-light lg:text-4xl text-black">
-      Some of Minimal work.
+    <h2 class="text-2xl tracking-tighter mb-10 font-light lg:text-4xl text-black">
+      My work.
     </h2>
-    
 
     <div
       class="flex flex-col w-full"
@@ -124,35 +149,22 @@
           tabindex="0"
           x-ref="slider"
         >
-          <div
-            class="items-center justify-center w-full flex flex-col shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/alfred.png" alt="" />
-          </div>
-          <div
-            class="items-center justify-center w-full flex flex-col shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/navy.png" alt="" />
-          </div>
-          <div
+          {works.map(({src, alt}) => (
+            <div
+                class="items-center justify-center w-full flex flex-col shrink-0 snap-start"
+                role="option"
+                x-bind="disableNextAndPreviousButtons"
+              >
+                <img src={src} alt="" />
+            </div>
+          ))}
+            <!-- <div
             class="items-center justify-center w-full flex flex-col
           shrink-0 snap-start"
             role="option"
             x-bind="disableNextAndPreviousButtons"
           >
-            <img src="/riflesso.png" alt="" />
-          </div>
-           <div
-            class="items-center justify-center w-full flex flex-col
-          shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/bal.png" alt="" />
+            <img src="/wb.png" alt="" />
           </div>
            <div
             class="items-center justify-center w-full flex flex-col
@@ -161,7 +173,7 @@
             x-bind="disableNextAndPreviousButtons"
           >
             <img src="/wb.png" alt="" />
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
