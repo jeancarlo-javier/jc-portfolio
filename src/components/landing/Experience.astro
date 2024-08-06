@@ -1,3 +1,45 @@
+---
+import Link from "@/components/global/Link.astro";
+
+interface Experience {
+    title: string;
+    company?: string;
+    start: string;
+    end: string;
+    description?: string;
+}
+
+const experienceHistory: Array<Experience> = [
+    {
+        title: "Fullstack Freelance",
+        start: "April 2024",
+        company: "Remote - Freelance",
+        end: "Present",
+    },
+    {
+        title: "Frontend Developer",
+        company: "TREMGroup - EE.UU en Remoto",
+        start: "August 2020",
+        end: "April 2024",
+        description: "I spearheaded the development of the CMS Website Builder, which is now used by hundreds of users. Leveraging React and Redux, I implemented a sophisticated frontend architecture. My team collaborated closely with the backend team, utilizing Symfony to seamlessly integrate frontend solutions within a WordPress environment. Additionally, I participated in and reviewed code to ensure the quality and maintainability of the codebase.",
+    },
+    {
+        title: "UI Designer & Frontend Developer",
+        company: "Guarnic - Chile en Remoto",
+        start: "April 2020",
+        end: "January 2020",
+        description: "I designed and developed user-centered interfaces for security applications, focusing on enhancing the user experience. I implemented reusable components and optimized the product's usability.",
+    },
+    {
+        title: "Frontend Developer",
+        company: "Mode ON",
+        start: "October 2019",
+        end: "January 2020",
+        description: "I contributed to the development of an innovative web application by implementing the shopping cart and checkout page. I also developed a dashboard for tour guides, utilizing React and Redux, and participated in code reviews to ensure high-quality code.",
+    }
+];
+---
+
 <section class="scroll-mt-28" id="experience">
     <div class="px-8 md:px-12 pb-24 max-w-2xl mx-auto">
         <div>
@@ -8,29 +50,20 @@
         <div class="space-y-8">
             <div class="relative pl-8">
                 <div class="absolute left-0 top-0 w-1 h-full bg-gray-400"></div>
-                <div class="mb-8 flex items-start space-x-4">
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900">Frontend Developer</h3>
-                        <p class="text-gray-600">ABC Company</p>
-                        <p class="text-gray-500">January 2020 - Present</p>
-                        <p class="text-sm mt-2 text-gray-600">Worked on various projects including a custom CMS for Real Estate, innovative dashboards, mobile applications, e-commerce platforms, and solutions focused on the tourism sector.</p>
+                {experienceHistory.map(({ title, company, start, end, description }) => (
+                    <div class="mb-8 flex items-start space-x-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-0.5">{title}</h3>
+                            {company && <p class="text-gray-600 mb-0.5">{company}</p>}
+                            <p class="text-sm text-gray-500">{start} - {end}</p>
+                            {description && <p class="mt-3 text-gray-600">{description}</p>}
+                        </div>
                     </div>
-                </div>
+                ))}
                 <div class="mb-8 flex items-start space-x-4">
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900">Junior Developer</h3>
-                        <p class="text-gray-600">XYZ Solutions</p>
-                        <p class="text-gray-500">June 2018 - December 2019</p>
-                        <p class="text-sm mt-2 text-gray-600">Contributed to the development of various web applications, optimized performance, and implemented new features based on client requirements.</p>
-                    </div>
-                </div>
-                <div class="mb-8 flex items-start space-x-4">
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900">Intern Developer</h3>
-                        <p class="text-gray-600">Tech Startups Inc.</p>
-                        <p class="text-gray-500">January 2017 - May 2018</p>
-                        <p class="text-sm mt-2 text-gray-600">Assisted in the development of web applications, participated in code reviews, and gained experience with various frontend technologies.</p>
-                    </div>
+                    <Link target="_blank" href="https://www.linkedin.com/in/jeancarlojavier/details/experience/">
+                        View all experience
+                    </Link>
                 </div>
             </div>
         </div>
