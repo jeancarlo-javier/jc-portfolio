@@ -5,22 +5,17 @@
         x-data="{ open: false }"
         class="relative flex flex-col w-full p-3 mx-auto bg-white ring-1 uppercase ring-zinc-200 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
       >
-        <div
-          class="flex flex-row items-center justify-between md:justify-start"
-        >
+        <div class="flex flex-row items-center justify-between md:justify-start">
           <a
             class="text-black hover:text-black/50 gap-4 items-center tracking-tighter inline-flex font-bold ml-2 text-xl"
-            href="/" title="linke to main page"
+            href="/"
+            title="linke to main page"
           >
             JC
           </a><button
             @click="open = !open"
             class="inline-flex items-center justify-center p-2 text-zinc-400 hover:text-cyan-300 focus:outline-none focus:text-black md:hidden"
-            ><svg
-              class="w-6 h-6"
-              stroke="currentColor"
-              fill="none"
-              viewBox="0 0 24 24"
+            ><svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"
               ><path
                 :class="{'hidden': open, 'inline-flex': !open }"
                 class="inline-flex"
@@ -53,7 +48,7 @@
               <a href="#work" class="hover:text-black shrink-0"> Work</a>
             </li>
             <li>
-              <a href="#how" class="hover:text-black shrink-0"> How it works</a>
+              <a href="#how" class="hover:text-black shrink-0"> Skills</a>
             </li>
             <li>
               <a href="#pricing" class="hover:text-black shrink-0"> Plans</a>

@@ -1,0 +1,106 @@
+---
+import Skill, { SkillProps } from '@/components/global/Skill.astro';
+
+const skills: Array<SkillProps> = [
+  {
+    name: 'React',
+    icon: '/icons/skills/react.svg',
+    color: 'text-blue-600', // React
+  },
+  {
+    name: 'Next',
+    icon: '/icons/skills/next.svg',
+    color: 'text-gray-900', // Next
+  },
+  {
+    name: 'Vue',
+    icon: '/icons/skills/vue.svg',
+    color: 'text-green-500', // Vue
+  },
+  {
+    name: 'Nuxt',
+    icon: '/icons/skills/nuxt.svg',
+    color: 'text-green-600', // Nuxt
+  },
+  {
+    name: 'Redux',
+    icon: '/icons/skills/redux.svg',
+    color: 'text-purple-600', // Redux
+  },
+  {
+    name: 'Javascript',
+    icon: '/icons/skills/javascript.svg',
+    color: 'text-yellow-500', // JavaScript
+  },
+  {
+    name: 'Typescript',
+    icon: '/icons/skills/typescript.svg',
+    color: 'text-blue-500', // TypeScript
+  },
+  {
+    name: 'HTML',
+    icon: '/icons/skills/html.svg',
+    color: 'text-orange-600', // HTML
+  },
+  {
+    name: 'CSS',
+    icon: '/icons/skills/css.svg',
+    color: 'text-blue-400', // CSS
+  },
+  {
+    name: 'Tailwind',
+    icon: '/icons/skills/tailwind.svg',
+    color: 'text-teal-500', // Tailwind
+  },
+  {
+    name: 'UX/UI',
+    icon: '/icons/skills/ux-ui.svg',
+    color: 'text-pink-500', // UX/UI
+  },
+  {
+    name: 'Git',
+    icon: '/icons/skills/git.svg',
+    color: 'text-red-600', // Git
+  },
+  {
+    name: 'Python',
+    icon: '/icons/skills/python.svg',
+    color: 'text-yellow-600', // Python
+  },
+  {
+    name: 'npm',
+    icon: '/icons/skills/npm.svg',
+    color: 'text-red-500', // npm
+  },
+  // {
+  //   name: 'AWS',
+  //   icon: '/icons/skills/aws.svg',
+  //   color: 'text-orange-500', // AWS
+  // },
+  // {
+  //   name: 'MySQL',
+  //   icon: '/icons/skills/mysql.svg',
+  //   color: 'text-blue-600', // MySQL
+  // },
+  {
+    name: 'Firebase',
+    icon: '/icons/skills/firebase.svg',
+    color: 'text-yellow-400', // Firebase
+  },
+];
+---
+
+<section class="scroll-mt-12" id="how">
+  <div class="px-8 md:px-12 py-12 max-w-2xl mx-auto">
+    <div>
+      <h2 class="text-2xl tracking-tighter font-light lg:text-4xl text-black">My skills.</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
+      {
+        skills.map(({ name, icon, color }) => {
+          return <Skill name={name} icon={icon} color={color} />;
+        })
+      }
+    </div>
+  </div>
+</section>
