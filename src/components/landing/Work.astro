@@ -2,34 +2,45 @@
 interface Work {
   alt: string
   src: string
+  title: string
+  description: string
 }
 
 const works: Array<Work> = [
   {
     alt: 'Idxboost CMS',
     src: '/works/idxboost-cms.webp',
+    title: 'Idxboost CMS',
+    description:
+      'Led the development of the CMS Website Builder using React and Redux. Collaborated with the Backend team using Symfony to integrate frontend solutions in a WordPress environment.'
   },
   {
     alt: 'Guarnic Overview',
     src: '/works/guarnic-overview-mockup.webp',
+    title: 'Guarnic Overview',
+    description:
+      'Designed and developed user-experience-centered interfaces for security applications. Implemented reusable components and optimized product usability. Frontend Developer'
   },
   {
     alt: 'Taskfive App',
     src: '/works/taskfive-app.webp',
+    title: 'TaskFive Landing Page',
+    description:
+      "I spearheaded the design and development of TaskFive's Landing Page, crafting an engaging and functional interface tailored for task management. The page was optimized for SEO and ensured compatibility across multiple devices."
   },
   {
     alt: 'Traveling Dashboard',
     src: '/works/dashboard-traveling-peru.webp',
+    title: 'Traveling Dashboard',
+    description:
+      'Created dynamic user interfaces with React, Redux, and Firebase. Developed the platform dashboard, improving real-time data interaction and management.'
   }
 ]
 ---
 
 <section class="scroll-mt-28" id="work">
-
   <div class="px-8 md:px-12 pb-24 max-w-2xl mx-auto">
-    <h2 class="text-2xl tracking-tighter mb-10 font-light lg:text-4xl text-black">
-      My work.
-    </h2>
+    <h2 class="text-2xl tracking-tighter mb-10 font-light lg:text-4xl text-black">My work.</h2>
 
     <div
       class="flex flex-col w-full"
@@ -110,13 +121,9 @@ const works: Array<Work> = [
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 stroke-width="2"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15 19l-7-7 7-7"></path>
+                ><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
               </svg>
-            </span><span class="sr-only">Skip to previous slide page</span
-            ></button
+            </span><span class="sr-only">Skip to previous slide page</span></button
           >
           <button
             class="bg-zinc-200 hover:bg-zinc-200 focus:bg-zinc-50 rounded-lg inline-flex items-center text-center text-black p-2 ring-1 ring-zinc-300"
@@ -133,10 +140,7 @@ const works: Array<Work> = [
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 stroke-width="2"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M9 5l7 7-7 7"></path>
+                ><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
               </svg>
             </span><span class="sr-only">Skip to next slide page</span></button
           >
@@ -149,17 +153,22 @@ const works: Array<Work> = [
           tabindex="0"
           x-ref="slider"
         >
-          {works.map(({src, alt}) => (
-            <div
-                class="items-center justify-center w-full flex flex-col shrink-0 snap-start"
+          {
+            works.map(({ src, alt, title, description }) => (
+              <div
+                class=" justify-center w-full flex flex-col shrink-0 snap-start"
                 role="option"
                 x-bind="disableNextAndPreviousButtons"
               >
-                <img src={src} alt="" />
-                Hello
-            </div>
-          ))}
-            <!-- <div
+                <img class="max-h-[300px] object-cover" src={src} alt={alt} />
+                <div class="px-5 py-4">
+                  <span class="text-md font-bold">{title}</span>
+                  <p class="mt-2 text-sm text-zinc-600">{description}</p>
+                </div>
+              </div>
+            ))
+          }
+          <!-- <div
             class="items-center justify-center w-full flex flex-col
           shrink-0 snap-start"
             role="option"
