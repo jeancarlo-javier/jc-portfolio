@@ -1,0 +1,175 @@
+---
+import Skill, { SkillProps } from '@/components/global/Skill.astro'
+
+const skills: Array<SkillProps> = [
+  {
+    name: 'React',
+    icon: '/icons/skills/react.svg',
+    color: 'text-blue-600' // React
+  },
+  {
+    name: 'Next',
+    icon: '/icons/skills/next.svg',
+    color: 'text-gray-900' // Next
+  },
+  {
+    name: 'Vue',
+    icon: '/icons/skills/vue.svg',
+    color: 'text-green-500' // Vue
+  },
+  {
+    name: 'Nuxt',
+    icon: '/icons/skills/nuxt.svg',
+    color: 'text-green-600' // Nuxt
+  },
+  {
+    name: 'Redux',
+    icon: '/icons/skills/redux.svg',
+    color: 'text-purple-600' // Redux
+  },
+  {
+    name: 'Javascript',
+    icon: '/icons/skills/javascript.svg',
+    color: 'text-yellow-500' // JavaScript
+  },
+  {
+    name: 'Typescript',
+    icon: '/icons/skills/typescript.svg',
+    color: 'text-blue-500' // TypeScript
+  },
+  {
+    name: 'HTML',
+    icon: '/icons/skills/html.svg',
+    color: 'text-orange-600' // HTML
+  },
+  {
+    name: 'CSS',
+    icon: '/icons/skills/css.svg',
+    color: 'text-blue-400' // CSS
+  },
+  {
+    name: 'Tailwind',
+    icon: '/icons/skills/tailwind.svg',
+    color: 'text-teal-500' // Tailwind
+  },
+  {
+    name: 'UX/UI',
+    icon: '/icons/skills/ux-ui.svg',
+    color: 'text-pink-500' // UX/UI
+  },
+  {
+    name: 'Git',
+    icon: '/icons/skills/git.svg',
+    color: 'text-red-600' // Git
+  },
+  {
+    name: 'Python',
+    icon: '/icons/skills/python.svg',
+    color: 'text-yellow-600' // Python
+  },
+  {
+    name: 'npm',
+    icon: '/icons/skills/npm.svg',
+    color: 'text-red-500' // npm
+  },
+  // {
+  //   name: 'AWS',
+  //   icon: '/icons/skills/aws.svg',
+  //   color: 'text-orange-500', // AWS
+  // },
+  // {
+  //   name: 'MySQL',
+  //   icon: '/icons/skills/mysql.svg',
+  //   color: 'text-blue-600', // MySQL
+  // },
+  {
+    name: 'Firebase',
+    icon: '/icons/skills/firebase.svg',
+    color: 'text-yellow-400' // Firebase
+  }
+]
+---
+
+<style>
+  .content-c-visual1-text {
+    position: absolute;
+    width: 392px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    p {
+      font-family: Inter V;
+      background: radial-gradient(50% 50% at 50% 50%, #5e5e5e 0%, rgba(186, 179, 255, 0) 70.69%);
+      background-image: radial-gradient(50% 50% at 50% 50%, rgb(147, 147, 147) 0%, rgba(186, 179, 255, 0) 70.69%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: -0.084px;
+    }
+  }
+</style>
+
+<section class="scroll-mt-12" id="soft">
+  <div class="px-8 md:px-12 py-12 max-w-7xl mx-auto">
+    <div class="px-8 md:px-12 max-w-2xl mx-auto">
+      <h2 class="text-2xl tracking-tighter font-light lg:text-4xl text-black">My soft skills.</h2>
+    </div>
+    <div class="grid grid-cols-6 grid-rows-3 gap-5 mt-8">
+      <div class="col-span-3 bg-white rounded-lg p-4 text-center py-12 px-10">
+        <h3 class="text-lg font-bold mb-2">Communication</h3>
+        <p>
+          Effective communication is key in any development process. I ensure clear and concise communication with my
+          team, enabling smooth collaboration and problem-solving.
+        </p>
+      </div>
+      <div class="col-span-3 col-start-4 bg-white rounded-lg p-4 text-center py-12 px-10">
+        <h3 class="text-lg font-bold mb-2">Teamwork</h3>
+        <p>
+          Collaboration is at the heart of my work. I thrive in team settings, contributing to projects with a focus on
+          achieving the best results through collective effort.
+        </p>
+      </div>
+      <div class="col-span-2 row-span-2 row-start-2 bg-white rounded-lg p-4 py-12 px-10">
+        <h3 class="text-lg font-bold mb-2">Problem-Solving</h3>
+        <p>
+          Problem-solving is a crucial part of development. I approach challenges methodically, applying my technical
+          expertise to find innovative and effective solutions.
+        </p>
+      </div>
+      <div
+        class="col-span-2 col-start-3 row-start-2 bg-white rounded-lg text-center p-4 py-12 px-10 relative overflow-hidden flex items-center justify-center"
+      >
+        <h3
+          class="text-lg font-bold mb-2 bg-white z-10 relative ring-1 ring-zinc-200 rounded-sm md:rounded-full py-2 px-4"
+        >
+          Make it better
+        </h3>
+        <div class="content-c-visual1-text">
+          <p>
+            CArabica is the most widely consumed and highly prized species of coffee bean, known for its delicate and
+            nuanced flavors, low acidity, and pleasant aroma. Arabica beans are grown at higher altitudes, typically
+            between 1,000 and 2,000 meters above sea level, in regions with mild temperatures, abundant rainfall, and
+            rich soil. They are hand-picked and carefully processed to preserve their natural sweetness and complexity,
+            resulting in a smooth and balanced cup with notes of chocolate, caramel, fruit, and floral undertones.
+            Arabica accounts for over 60% of the world's coffee production and is the preferred choice for specialty
+            coffee roasters and cafes.
+          </p>
+        </div>
+      </div>
+      <div class="col-span-2 row-span-2 col-start-5 row-start-2 bg-white rounded-lg p-4 py-12 px-10">
+        <h3 class="text-lg font-bold mb-2">Adaptability</h3>
+        <p>
+          The tech industry is ever-changing, and adaptability is key. I continuously update my skills and adapt to new
+          tools, frameworks, and methodologies to stay ahead.
+        </p>
+      </div>
+      <div class="col-span-2 col-start-3 row-start-3 bg-white rounded-lg p-4 text-center py-12 px-10">
+        <h3 class="text-lg font-bold mb-2">Coding Animation</h3>
+      </div>
+    </div>
+  </div>
+</section>
