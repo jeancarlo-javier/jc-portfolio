@@ -93,7 +93,7 @@ const works: Array<Work> = [
     }"
     >
       <div
-        class="flex flex-col w-full bg-white rounded-3xl pt-4"
+        class="flex flex-col w-full bg-white rounded-3xl pt-0 relative overflow-hidden"
         aria-labelledby="carousel-label"
         role="region"
         tabindex="0"
@@ -105,9 +105,11 @@ const works: Array<Work> = [
           hidden=""
           id="carousel-content-label">Carousel</span
         >
-        <div class="items-center justify-center inline-flex mx-auto space-x-2">
+        <div
+          class="items-center justify-between w-full inline-flex mx-auto space-x-2 absolute h-[350px] p-4 pointer-events-none"
+        >
           <button
-            class="bg-zinc-200 hover:bg-zinc-200 focus:bg-zinc-50 rounded-lg inline-flex items-center text-center text-black p-2 ring-1 ring-zinc-300"
+            class="bg-zinc-200 hover:bg-zinc-200 focus:bg-zinc-50 rounded-lg inline-flex items-center text-center text-black p-2 ring-1 ring-zinc-300 pointer-events-auto"
             :class="{ 'opacity-50 cursor-not-allowed': atBeginning }"
             :aria-disabled="atBeginning"
             :tabindex="atEnd ? -1 : 0"
@@ -126,7 +128,7 @@ const works: Array<Work> = [
             </span><span class="sr-only">Skip to previous slide page</span></button
           >
           <button
-            class="bg-zinc-200 hover:bg-zinc-200 focus:bg-zinc-50 rounded-lg inline-flex items-center text-center text-black p-2 ring-1 ring-zinc-300"
+            class="bg-zinc-200 hover:bg-zinc-200 focus:bg-zinc-50 rounded-lg inline-flex items-center text-center text-black p-2 ring-1 ring-zinc-300 pointer-events-auto"
             :class="{ 'opacity-50 cursor-not-allowed': atEnd }"
             :aria-disabled="atEnd"
             :tabindex="atEnd ? -1 : 0"
@@ -160,7 +162,7 @@ const works: Array<Work> = [
                 role="option"
                 x-bind="disableNextAndPreviousButtons"
               >
-                <img class="max-h-[300px] object-cover" src={src} alt={alt} />
+                <img class="max-h-[350px] object-cover" src={src} alt={alt} />
                 <div class="px-5 py-4">
                   <span class="text-md font-bold">{title}</span>
                   <p class="mt-2 text-sm text-zinc-600">{description}</p>
